@@ -31,6 +31,14 @@
  **
  **/
 
+#include <stdlib.h>
+#include <time.h>
 #include <ubench.h>
 
-UBENCH_MAIN()
+UBENCH_STATE();
+
+int main(int argc, const char *const argv[]) {
+    srand(time(NULL)); // Inicializando
+
+    return ubench_main(argc, argv);
+}

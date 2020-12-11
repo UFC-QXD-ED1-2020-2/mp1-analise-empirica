@@ -32,6 +32,8 @@
  **
  **/
 
+#include <stdlib.h>
+
 void pior_caso_selection(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
@@ -56,4 +58,13 @@ void melhor_caso_bubble(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
 
-void instancia_aleatoria(int array[], size_t size) {}
+void instancia_aleatoria(int array[], size_t size) {
+    // NOTE Consulte esta página
+    //          https://www.ime.usp.br/~pf/algoritmos/aulas/random.html
+    //      para entender como gerar números aleatórios em C.
+
+    // NOTE A inicialização do gerador está feita na função main e não deve ser feita
+    //      novamente.
+
+    // TODO Implementação
+}
