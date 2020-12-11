@@ -38,7 +38,7 @@
 UBENCH_STATE();
 
 int main(int argc, const char *const argv[]) {
-    srand(time(NULL)); // Inicializando
+    srand(time(NULL)); // Inicializando geração de números aleatórios.
 
     return ubench_main(argc, argv);
 }
