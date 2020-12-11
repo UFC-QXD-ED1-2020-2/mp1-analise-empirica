@@ -36,7 +36,7 @@
 #include <stdlib.h>
 #include <ubench.h>
 
-//----- piores casos nãodecrescente
+//----- piores casos NÃO-DECRESCENTE
 
 struct piores_casos_naodecr {
     int *array_selection;
@@ -64,7 +64,35 @@ UBENCH_F_TEARDOWN(piores_casos_naodecr) {
     free(ubench_fixture->array_selection);
 }
 
-//----- melhores casos nãodecrescente
+//----- piores casos NÃO-CRESCENTE
+
+struct piores_casos_naocresc {
+    int *array_selection;
+    int *array_insertion;
+    int *array_bubble;
+    size_t size;
+};
+
+UBENCH_F_SETUP(piores_casos_naocresc) {
+    const size_t instance_size = 50;
+
+    ubench_fixture->size = instance_size;
+    ubench_fixture->array_selection = malloc(sizeof(int) * instance_size);
+    ubench_fixture->array_insertion = malloc(sizeof(int) * instance_size);
+    ubench_fixture->array_bubble = malloc(sizeof(int) * instance_size);
+
+    pior_caso_selection(ubench_fixture->array_selection, instance_size, ORDER_NONINCREASING);
+    pior_caso_insertion(ubench_fixture->array_insertion, instance_size, ORDER_NONINCREASING);
+    pior_caso_bubble(ubench_fixture->array_bubble, instance_size, ORDER_NONINCREASING);
+}
+
+UBENCH_F_TEARDOWN(piores_casos_naocresc) {
+    free(ubench_fixture->array_bubble);
+    free(ubench_fixture->array_insertion);
+    free(ubench_fixture->array_selection);
+}
+
+//----- aleatorio nãodecrescente
 
 struct melhores_casos_naodecr {
     int *array_selection;

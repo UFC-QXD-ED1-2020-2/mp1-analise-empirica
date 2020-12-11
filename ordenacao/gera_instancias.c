@@ -46,18 +46,6 @@ void pior_caso_bubble(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
 
-void melhor_caso_selection(int array[], size_t size, enum ordering order) {
-    // TODO Implementação.
-}
-
-void melhor_caso_insertion(int array[], size_t size, enum ordering order) {
-    // TODO Implementação.
-}
-
-void melhor_caso_bubble(int array[], size_t size, enum ordering order) {
-    // TODO Implementação.
-}
-
 void instancia_aleatoria(int array[], size_t size) {
     // NOTE Consulte esta página
     //          https://www.ime.usp.br/~pf/algoritmos/aulas/random.html
