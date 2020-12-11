@@ -39,6 +39,9 @@
 //!
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+#ifndef QXD_QXCODE_GERA_INSTANCIAS_H
+#define QXD_QXCODE_GERA_INSTANCIAS_H
+
 #include "algoritmos.h"
 
 void pior_caso_selection(int array[], size_t size, enum ordering order);
@@ -46,3 +49,5 @@ void pior_caso_insertion(int array[], size_t size, enum ordering order);
 void pior_caso_bubble(int array[], size_t size, enum ordering order);
 
 void instancia_aleatoria(int array[], size_t size);
+
+#endif

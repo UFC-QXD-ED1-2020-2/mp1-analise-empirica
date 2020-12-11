@@ -38,6 +38,9 @@
 //!
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+#ifndef QXD_QXCODE_ALGORITMOS_H
+#define QXD_QXCODE_ALGORITMOS_H
+
 #include <stddef.h>
 
 /**
@@ -87,3 +90,5 @@ sorting_telemetry insertion_sort(int array[], size_t size, enum ordering order);
  ** @return         Informações sobre as operações realizadas na ordenação.
  **/
 sorting_telemetry bubble_sort(int array[], size_t size, enum ordering order);
+
+#endif
