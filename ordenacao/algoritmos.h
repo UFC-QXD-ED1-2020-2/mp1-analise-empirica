@@ -41,6 +41,15 @@
 #include <stddef.h>
 
 /**
+ ** @brief Especifica as informações que devem ser reportadas ao final do processo de ordenação.
+ **/
+typedef struct {
+    size_t input_size;        //< Tamanho da entrada ordenada.
+    size_t comparisons_count; //< Número de comparações <em>entre elementos</em> realizadas.
+    size_t swaps_count;       //< Número de trocas <em>entre elementos</em> realizadas.
+} sorting_telemetry;
+
+/**
  ** @brief Define a ordem usada nos algoritmos de ordenação.
  **/
 enum ordering {
@@ -54,8 +63,9 @@ enum ordering {
  ** @param array    Vetor a ser ordenado.
  ** @param size     Número de elementos no vetor.
  ** @param order    Ordem a ser considerada na ordenação.
+ ** @return         Informações sobre as operações realizadas na ordenação.
  **/
-void selection_sort(int array[], size_t size, enum ordering order);
+sorting_telemetry selection_sort(int array[], size_t size, enum ordering order);
 
 /**
  ** @brief Ordena o vetor @p array usando <em>ordenação por inserção</em>, segundo a ordem especificada por @p order.
@@ -63,8 +73,9 @@ void selection_sort(int array[], size_t size, enum ordering order);
  ** @param array    Vetor a ser ordenado.
  ** @param size     Número de elementos no vetor.
  ** @param order    Ordem a ser considerada na ordenação.
+ ** @return         Informações sobre as operações realizadas na ordenação.
  **/
-void insertion_sort(int array[], size_t size, enum ordering order);
+sorting_telemetry insertion_sort(int array[], size_t size, enum ordering order);
 
 /**
  ** @brief Ordena o vetor @p array usando <em>ordenação pelo borbulhamento</em>, segundo a ordem especificada por @p
@@ -73,5 +84,6 @@ void insertion_sort(int array[], size_t size, enum ordering order);
  ** @param array    Vetor a ser ordenado.
  ** @param size     Número de elementos no vetor.
  ** @param order    Ordem a ser considerada na ordenação.
+ ** @return         Informações sobre as operações realizadas na ordenação.
  **/
-void bubble_sort(int array[], size_t size, enum ordering order);
+sorting_telemetry bubble_sort(int array[], size_t size, enum ordering order);

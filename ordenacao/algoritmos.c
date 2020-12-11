@@ -31,14 +31,14 @@
 
 #include "algoritmos.h"
 
-void selection_sort(int array[], size_t size, enum ordering order) {
+sorting_telemetry selection_sort(int array[], size_t size, enum ordering order) {
     // TODO Implementação
 }
 
-void insertion_sort(int array[], size_t size, enum ordering order) {
+sorting_telemetry insertion_sort(int array[], size_t size, enum ordering order) {
     // TODO Implementação
 }
 
-void bubble_sort(int array[], size_t size, enum ordering order) {
+sorting_telemetry bubble_sort(int array[], size_t size, enum ordering order) {
     // TODO Implementação
 }
