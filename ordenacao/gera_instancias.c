@@ -55,3 +55,5 @@ void melhor_caso_insertion(int array[], size_t size, enum ordering order) {
 void melhor_caso_bubble(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
+
+void instancia_aleatoria(int array[], size_t size) {}

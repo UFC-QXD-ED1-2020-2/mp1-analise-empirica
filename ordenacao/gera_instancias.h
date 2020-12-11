@@ -49,6 +49,4 @@ void melhor_caso_selection(int array[], size_t size, enum ordering order);
 void melhor_caso_insertion(int array[], size_t size, enum ordering order);
 void melhor_caso_bubble(int array[], size_t size, enum ordering order);
 
-melhor_caso_selection(int array[], size_t size, enum ordering order);
-melhor_caso_insertion(int array[], size_t size, enum ordering order);
-melhor_caso_bubble(int array[], size_t size, enum ordering order);
+void instancia_aleatoria(int array[], size_t size);
