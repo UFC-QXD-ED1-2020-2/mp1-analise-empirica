@@ -32,6 +32,8 @@
  **
  **/
 
+#include "gera_instancias.h"
+
 #include <stdlib.h>
 
 void pior_caso_selection(int array[], size_t size, enum ordering order) {
