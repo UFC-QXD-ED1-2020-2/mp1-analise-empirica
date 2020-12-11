@@ -94,27 +94,31 @@ UBENCH_F_TEARDOWN(piores_casos_naocresc) {
 
 //----- aleatorio nãodecrescente
 
-struct melhores_casos_naodecr {
+struct aleatorio_naodecr {
     int *array_selection;
     int *array_insertion;
     int *array_bubble;
     size_t size;
+    size_t samples_count;
 };
 
-UBENCH_F_SETUP(melhores_casos_naodecr) {
+UBENCH_F_SETUP(aleatorio_naodecr) {
     const size_t instance_size = 50;
+    const size_t samples = 30;
 
     ubench_fixture->size = instance_size;
+    ubench_fixture->samples_count = samples;
+
     ubench_fixture->array_selection = malloc(sizeof(int) * instance_size);
     ubench_fixture->array_insertion = malloc(sizeof(int) * instance_size);
     ubench_fixture->array_bubble = malloc(sizeof(int) * instance_size);
 
-    melhor_caso_selection(ubench_fixture->array_selection, instance_size, ORDER_NONDECREASING);
-    melhor_caso_insertion(ubench_fixture->array_insertion, instance_size, ORDER_NONDECREASING);
-    melhor_caso_bubble(ubench_fixture->array_bubble, instance_size, ORDER_NONDECREASING);
+    instancia_aleatoria(ubench_fixture->array_selection, instance_size);
+    instancia_aleatoria(ubench_fixture->array_insertion, instance_size);
+    instancia_aleatoria(ubench_fixture->array_bubble, instance_size);
 }
 
-UBENCH_F_TEARDOWN(melhores_casos_naodecr) {
+UBENCH_F_TEARDOWN(aleatorio_naodecr) {
     free(ubench_fixture->array_bubble);
     free(ubench_fixture->array_insertion);
     free(ubench_fixture->array_selection);
