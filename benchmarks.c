@@ -36,6 +36,9 @@
 #include <stdlib.h>
 #include <ubench.h>
 
+const size_t instance_size = 50;
+const size_t samples = 30;
+
 //----- piores casos NÃO-DECRESCENTE
 
 struct piores_casos_naodecr {
@@ -46,8 +49,6 @@ struct piores_casos_naodecr {
 };
 
 UBENCH_F_SETUP(piores_casos_naodecr) {
-    const size_t instance_size = 50;
-
     ubench_fixture->size = instance_size;
     ubench_fixture->array_selection = malloc(sizeof(int) * instance_size);
     ubench_fixture->array_insertion = malloc(sizeof(int) * instance_size);
@@ -74,8 +75,6 @@ struct piores_casos_naocresc {
 };
 
 UBENCH_F_SETUP(piores_casos_naocresc) {
-    const size_t instance_size = 50;
-
     ubench_fixture->size = instance_size;
     ubench_fixture->array_selection = malloc(sizeof(int) * instance_size);
     ubench_fixture->array_insertion = malloc(sizeof(int) * instance_size);
@@ -103,9 +102,6 @@ struct aleatorio_naodecr {
 };
 
 UBENCH_F_SETUP(aleatorio_naodecr) {
-    const size_t instance_size = 50;
-    const size_t samples = 30;
-
     ubench_fixture->size = instance_size;
     ubench_fixture->samples_count = samples;
 
