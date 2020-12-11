@@ -32,26 +32,26 @@
  **
  **/
 
-pior_caso_selection(int array[], size_t size, enum ordering order) {
+void pior_caso_selection(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
 
-pior_caso_insertion(int array[], size_t size, enum ordering order) {
+void pior_caso_insertion(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
 
-pior_caso_bubble(int array[], size_t size, enum ordering order) {
+void pior_caso_bubble(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
 
-melhor_caso_selection(int array[], size_t size, enum ordering order) {
+void melhor_caso_selection(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
 
-melhor_caso_insertion(int array[], size_t size, enum ordering order) {
+void melhor_caso_insertion(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
 
-melhor_caso_bubble(int array[], size_t size, enum ordering order) {
+void melhor_caso_bubble(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
