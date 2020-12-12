@@ -91,6 +91,35 @@ UBENCH_F_TEARDOWN(piores_casos_naocresc) {
     free(ubench_fixture->array_selection);
 }
 
+//----- quase-ordenado nãodecrescente
+
+struct quaseord_naodecr {
+    int *array_selection;
+    int *array_insertion;
+    int *array_bubble;
+    size_t size;
+    size_t samples_count;
+};
+
+UBENCH_F_SETUP(quaseord_naodecr) {
+    ubench_fixture->size = instance_size;
+    ubench_fixture->samples_count = samples;
+
+    ubench_fixture->array_selection = malloc(sizeof(int) * instance_size);
+    ubench_fixture->array_insertion = malloc(sizeof(int) * instance_size);
+    ubench_fixture->array_bubble = malloc(sizeof(int) * instance_size);
+
+    instancia_quase_ordenada(ubench_fixture->array_selection, instance_size, ORDER_NONDECREASING);
+    instancia_quase_ordenada(ubench_fixture->array_insertion, instance_size, ORDER_NONDECREASING);
+    instancia_quase_ordenada(ubench_fixture->array_bubble, instance_size, ORDER_NONDECREASING);
+}
+
+UBENCH_F_TEARDOWN(quaseord_naodecr) {
+    free(ubench_fixture->array_bubble);
+    free(ubench_fixture->array_insertion);
+    free(ubench_fixture->array_selection);
+}
+
 //----- aleatorio nãodecrescente
 
 struct aleatorio_naodecr {

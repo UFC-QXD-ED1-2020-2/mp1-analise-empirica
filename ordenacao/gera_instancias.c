@@ -48,6 +48,20 @@ void pior_caso_bubble(int array[], size_t size, enum ordering order) {
     // TODO Implementação.
 }
 
+void instancia_quase_ordenada(int array[], size_t size, enum ordering order) {
+    // NOTE Para construir instancias quase-ordenadas, siga o procedimento:
+    //      1. Inicie de um vetor ordenado (segundo a ordem indicada) e calcule
+    //         o valor de `repeticoes` como sendo 15% do tamanho do vetor.
+    //      2. Repita o procedimento a seguir a quantidade de vezes calculada:
+    //          2.1. Escolha dois índices `i` e `j` aleatoriamente.
+    //          2.2. Troque os elementos `array[i]` e `array[j]`.
+
+    // NOTE A inicialização do gerador de numeros aleatórios está feita na função
+    //      main e não deve ser feita novamente.
+
+    // TODO Implementação
+}
+
 void instancia_aleatoria(int array[], size_t size) {
     // NOTE Consulte esta página
     //          https://www.ime.usp.br/~pf/algoritmos/aulas/random.html
