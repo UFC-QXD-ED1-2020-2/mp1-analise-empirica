@@ -3,17 +3,22 @@ project(analise-empirica VERSION 0.1.0)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories(${CMAKE_SOURCE_DIR}/ubench/)
+include_directories(${CMAKE_SOURCE_DIR}/libs/ubench/)
+include_directories(${CMAKE_SOURCE_DIR}/libs/argtable-3.1.5-amalgamation/)
 
 add_executable(analise-empirica
     main.c
     benchmarks.c
     ordenacao/algoritmos.c
     ordenacao/gera_instancias.c
-    ubench/ubench.h
+    libs/argtable-3.1.5-amalgamation/argtable3.c
     ordenacao/algoritmos.h
     ordenacao/gera_instancias.h
+    libs/ubench/ubench.h
+    libs/argtable-3.1.5-amalgamation/argtable3.h
 )
+
+add_compile_definitions(QXD_QXCODE_PROGNAME="${PROJECT_NAME}")
 
 target_link_libraries(analise-empirica -lm)
 

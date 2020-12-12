@@ -36,8 +36,8 @@
 #include <stdlib.h>
 #include <ubench.h>
 
-const size_t instance_size = 50;
-const size_t samples = 30;
+size_t instance_size = 1000;
+size_t samples = 30;
 
 //----- piores casos NÃO-DECRESCENTE
 
