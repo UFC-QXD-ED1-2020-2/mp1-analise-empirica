@@ -33,12 +33,18 @@
 
 sorting_telemetry selection_sort(int array[], size_t size, enum ordering order) {
     // TODO Implementação
+
+    return (sorting_telemetry){0, 0, 0};
 }
 
 sorting_telemetry insertion_sort(int array[], size_t size, enum ordering order) {
     // TODO Implementação
+
+    return (sorting_telemetry){0, 0, 0};
 }
 
 sorting_telemetry bubble_sort(int array[], size_t size, enum ordering order) {
     // TODO Implementação
+
+    return (sorting_telemetry){0, 0, 0};
 }
