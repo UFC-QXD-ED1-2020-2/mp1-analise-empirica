@@ -90,7 +90,8 @@ int main(int argc, char *argv[]) {
                 if(size_opt->ival[0] > 0) {
                     instance_size = (size_t) size_opt->ival[0];
                 } else {
-                    fputs("[ERRO]: Tamanho das entradas deve ser positivo.\n", stderr);
+                    fprintf(stderr, "[ERRO]: Tamanho das entradas deve ser positivo. Valor fornecido foi %d.\n",
+                            size_opt->ival[0]);
                     exitcode = EXIT_FAILURE;
                     goto exit_point;
                 }
@@ -102,7 +103,9 @@ int main(int argc, char *argv[]) {
                 if(samples_opt->ival[0] > 0) {
                     samples = (size_t) samples_opt->ival[0];
                 } else {
-                    fputs("[ERRO]: Quantidade de instancias aleatorias deve ser positiva.\n", stderr);
+                    fprintf(stderr,
+                            "[ERRO]: Quantidade de instancias aleatorias deve ser positiva. Valor fornecido foi %d.\n",
+                            samples_opt->ival[0]);
                     exitcode = EXIT_FAILURE;
                     goto exit_point;
                 }
