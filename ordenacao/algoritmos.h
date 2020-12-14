@@ -61,33 +61,35 @@ enum ordering {
 };
 
 /**
- ** @brief Ordena o vetor @p array usando <em>ordenação por seleção</em>, segundo a ordem especificada por @p order.
- **
- ** @param array    Vetor a ser ordenado.
- ** @param size     Número de elementos no vetor.
- ** @param order    Ordem a ser considerada na ordenação.
- ** @return         Informações sobre as operações realizadas na ordenação.
+ ** @brief Ordena os primeiros @p size elementos do vetor @p array usando
+ ** <em>ordenação por seleção</em> segundo a ordem especificada por @p order.
+ ** 
+ ** @param array    vetor a ser ordenado.
+ ** @param size     quantidade de elementos a considerar em @p array.
+ ** @param order    ordem em que os elementos de @p array devem ficar após ordenados.
+ ** @return         informações sobre as operações realizadas durante a ordenação.
  **/
 sorting_telemetry selection_sort(int array[], size_t size, enum ordering order);
 
 /**
- ** @brief Ordena o vetor @p array usando <em>ordenação por inserção</em>, segundo a ordem especificada por @p order.
- **
- ** @param array    Vetor a ser ordenado.
- ** @param size     Número de elementos no vetor.
- ** @param order    Ordem a ser considerada na ordenação.
- ** @return         Informações sobre as operações realizadas na ordenação.
+ ** @brief Ordena os primeiros @p size elementos do vetor @p array usando
+ ** <em>ordenação por inserção</em> segundo a ordem especificada por @p order.
+ ** 
+ ** @param array    vetor a ser ordenado.
+ ** @param size     quantidade de elementos a considerar em @p array.
+ ** @param order    ordem em que os elementos de @p array devem ficar após ordenados.
+ ** @return         informações sobre as operações realizadas durante a ordenação.
  **/
 sorting_telemetry insertion_sort(int array[], size_t size, enum ordering order);
 
 /**
- ** @brief Ordena o vetor @p array usando <em>ordenação pelo borbulhamento</em>, segundo a ordem especificada por @p
- ** order.
- **
- ** @param array    Vetor a ser ordenado.
- ** @param size     Número de elementos no vetor.
- ** @param order    Ordem a ser considerada na ordenação.
- ** @return         Informações sobre as operações realizadas na ordenação.
+ ** @brief Ordena os primeiros @p size elementos do vetor @p array usando
+ ** <em>ordenação pelo borbulhamento</em> segundo a ordem especificada por @p order.
+ ** 
+ ** @param array    vetor a ser ordenado.
+ ** @param size     quantidade de elementos a considerar em @p array.
+ ** @param order    ordem em que os elementos de @p array devem ficar após ordenados.
+ ** @return         informações sobre as operações realizadas durante a ordenação.
  **/
 sorting_telemetry bubble_sort(int array[], size_t size, enum ordering order);
 
