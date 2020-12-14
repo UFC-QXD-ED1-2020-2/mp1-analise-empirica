@@ -44,11 +44,68 @@
 
 #include "algoritmos.h"
 
+/**
+ ** @brief Preenche as primeiras @p size posições do vetor @p array com elementos
+ ** arbitrários, porém compondo um @b pior caso para o algoritmo <em>SelectionSort</em>
+ ** quando ordenando-os segundo a ordem especificada por @p order.
+ **
+ ** A memória correspondente ao vetor @p array será alocada pela função que chamar esta.
+ **
+ ** @param array    vetor a preencher.
+ ** @param size     quantidade de elementos a preencher.
+ ** @param order    ordem em que os elementos serão ordenados.
+ **/
 void pior_caso_selection(int array[], size_t size, enum ordering order);
+
+/**
+ ** @brief Preenche as primeiras @p size posições do vetor @p array com elementos
+ ** arbitrários, porém compondo um @b pior caso para o algoritmo <em>InsertionSort</em>
+ ** quando ordenando-os segundo a ordem especificada por @p order.
+ **
+ ** A memória correspondente ao vetor @p array será alocada pela função que chamar esta.
+ **
+ ** @param array    vetor a preencher.
+ ** @param size     quantidade de elementos a preencher.
+ ** @param order    ordem em que os elementos serão ordenados.
+ **/
 void pior_caso_insertion(int array[], size_t size, enum ordering order);
+
+/**
+ ** @brief Preenche as primeiras @p size posições do vetor @p array com elementos
+ ** arbitrários, porém compondo um @b pior caso para o algoritmo <em>BubbleSort</em>
+ ** quando ordenando-os segundo a ordem especificada por @p order.
+ **
+ ** A memória correspondente ao vetor @p array será alocada pela função que chamar esta.
+ **
+ ** @param array    vetor a preencher.
+ ** @param size     quantidade de elementos a preencher.
+ ** @param order    ordem em que os elementos serão ordenados.
+ **/
 void pior_caso_bubble(int array[], size_t size, enum ordering order);
 
+/**
+ ** @brief Preenche as primeiras @p size posições do vetor @p array com elementos
+ ** arbitrários, porém constituindo uma instância com muito poucos elementos ainda
+ ** por ordenar, considerando a ordem especificada por @p order.
+ **
+ ** A memória correspondente ao vetor @p array será alocada pela função que chamar esta.
+ **
+ ** @param array    vetor a preencher.
+ ** @param size     quantidade de elementos a preencher.
+ ** @param order    ordem em que os elementos serão ordenados.
+ **/
 void instancia_quase_ordenada(int array[], size_t size, enum ordering order);
+
+/**
+ ** @brief Preenche as primeiras @p size posições do vetor @p array com elementos
+ ** arbitrários, dispostos em uma ordem aleatória.
+ **
+ ** A memória correspondente ao vetor @p array será alocada pela função que chamar esta.
+ **
+ ** @param array    vetor a preencher.
+ ** @param size     quantidade de elementos a preencher.
+ ** @param order    ordem em que os elementos serão ordenados.
+ **/
 void instancia_aleatoria(int array[], size_t size);
 
 #endif
