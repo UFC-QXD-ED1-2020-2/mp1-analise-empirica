@@ -52,15 +52,16 @@ int main(int argc, char *argv[]) {
 
     // Estruturas para parametros
     struct arg_lit *help_opt;
-    struct arg_int *size_opt, *samples_opt;
+    struct arg_int *size_opt, *samples_opt, *seed_opt;
     struct arg_end *end_opt;
 
     // Sequencia de parametros
     void *argtable[] = {
-        help_opt    = arg_litn("?h", "help", 0, 1, "mostrar este texto de ajuda e encerrar"),
-        size_opt    = arg_intn("n", "size", "<n>", 0, 1, "tamanho de cada instancia a gerar"),
+        help_opt = arg_litn("?h", "help", 0, 1, "mostrar este texto de ajuda e encerrar"),
+        size_opt = arg_intn("n", "size", "<n>", 0, 1, "tamanho de cada instancia a gerar"),
         samples_opt = arg_intn("r", "samples", "<n>", 0, 1, "quantidade de instancias aleatorias a gerar"),
-        end_opt     = arg_end(5),
+        seed_opt = arg_intn("s", "seed", "<n>", 0, 1, "semente a ser usada para gerar numeros aleatorios"),
+        end_opt = arg_end(5),
     };
 
     if (arg_nullcheck(argtable) != 0) {
@@ -68,6 +69,7 @@ int main(int argc, char *argv[]) {
         exitcode = EXIT_FAILURE;
     } else {
         int nerrors = arg_parse(argc, argv, argtable);
+        unsigned int seed = (unsigned int) time(NULL);
 
         if(help_opt->count > 0 || nerrors != 0) {
             FILE *stream = stdout;
@@ -109,12 +111,17 @@ int main(int argc, char *argv[]) {
                     exitcode = EXIT_FAILURE;
                     goto exit_point;
                 }
+            }
+
+            if (seed_opt->count > 0) {
+                if (seed_opt->ival[0] >= 0) {
+                    seed = (unsigned int) seed_opt->ival[0];
             } else {
                 fprintf(stderr, "[NOTA]: Usando a quantidade padrão de instancias aleatorias de %d.\n", samples);
             }
 
             // Inicializando geração de números aleatórios.
-            srand(time(NULL));
+            srand(seed);
 
             exitcode = ubench_main(argc, (const char * const*)argv);
         }
