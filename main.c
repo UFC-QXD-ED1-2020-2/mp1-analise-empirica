@@ -97,8 +97,6 @@ int main(int argc, char *argv[]) {
                     exitcode = EXIT_FAILURE;
                     goto exit_point;
                 }
-            } else {
-                fprintf(stderr, "[NOTA]: Usando o tamanho padrão de instancia de %d.\n", instance_size);
             }
 
             if (samples_opt->count > 0) {
@@ -116,14 +114,22 @@ int main(int argc, char *argv[]) {
             if (seed_opt->count > 0) {
                 if (seed_opt->ival[0] >= 0) {
                     seed = (unsigned int) seed_opt->ival[0];
-            } else {
-                fprintf(stderr, "[NOTA]: Usando a quantidade padrão de instancias aleatorias de %d.\n", samples);
+                } else {
+                    fprintf(stderr, "[ERRO]: Semente deve ser um numero nao-negativo. Valor fornecido foi %d.\n",
+                            seed_opt->ival[0]);
+                    exitcode = EXIT_FAILURE;
+                    goto exit_point;
+                }
             }
 
             // Inicializando geração de números aleatórios.
             srand(seed);
 
             exitcode = ubench_main(argc, (const char * const*)argv);
+
+            printf("\n[[----EXECUTION INFO----]]\n  - %-25s = %zu\n  - %-25s = %zu"
+                   "\n  - %-25s = %u\n\n",
+                   "Tamanho das instancias", instance_size, "Quantidade de amostras", samples, "Semente usada", seed);
         }
     }
 
