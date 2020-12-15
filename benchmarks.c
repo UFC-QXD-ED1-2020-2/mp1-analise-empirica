@@ -68,27 +68,30 @@ UBENCH_F_TEARDOWN(piores_casos_naodecr) {
 
 UBENCH_F(piores_casos_naodecr, selection_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = selection_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
+    sorting_telemetry telemetry =
+        selection_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
 
 UBENCH_F(piores_casos_naodecr, insertion_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = insertion_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
+    sorting_telemetry telemetry =
+        insertion_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
 
 UBENCH_F(piores_casos_naodecr, bubble_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = bubble_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
+    sorting_telemetry telemetry =
+        bubble_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
@@ -121,27 +124,30 @@ UBENCH_F_TEARDOWN(piores_casos_naocresc) {
 
 UBENCH_F(piores_casos_naocresc, selection_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = selection_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONINCREASING);
+    sorting_telemetry telemetry =
+        selection_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONINCREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
 
 UBENCH_F(piores_casos_naocresc, insertion_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = insertion_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONINCREASING);
+    sorting_telemetry telemetry =
+        insertion_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONINCREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
 
 UBENCH_F(piores_casos_naocresc, bubble_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = bubble_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONINCREASING);
+    sorting_telemetry telemetry =
+        bubble_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONINCREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
@@ -177,27 +183,30 @@ UBENCH_F_TEARDOWN(quaseord_naodecr) {
 
 UBENCH_F(quaseord_naodecr, selection_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = selection_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
+    sorting_telemetry telemetry =
+        selection_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
 
 UBENCH_F(quaseord_naodecr, insertion_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = insertion_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
+    sorting_telemetry telemetry =
+        insertion_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
 
 UBENCH_F(quaseord_naodecr, bubble_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = bubble_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
+    sorting_telemetry telemetry =
+        bubble_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
@@ -233,27 +242,30 @@ UBENCH_F_TEARDOWN(aleatorio_naodecr) {
 
 UBENCH_F(aleatorio_naodecr, selection_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = selection_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
+    sorting_telemetry telemetry =
+        selection_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
 
 UBENCH_F(aleatorio_naodecr, insertion_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = insertion_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
+    sorting_telemetry telemetry =
+        insertion_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
 
 UBENCH_F(aleatorio_naodecr, bubble_sort) {
     static unsigned int execution = 0;
-    sorting_telemetry tel = bubble_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
+    sorting_telemetry telemetry =
+        bubble_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
     if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", tel.comparisons_count, tel.swaps_count);
+        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
         ++execution;
     }
 }
