@@ -61,6 +61,22 @@ UBENCH_F_SETUP(piores_casos_naodecr) {
 }
 
 UBENCH_F_TEARDOWN(piores_casos_naodecr) {
+    static bool selection_failed = false, insertion_failed = false, bubble_failed = false;
+
+    if (!bubble_failed)
+        if ((bubble_failed = !testa_ordenacao(ubench_fixture->array_bubble, ubench_fixture->size, ORDER_NONDECREASING)))
+            fputs("[ERRO (piores_casos_naodecr)]: O algoritmo BubbleSort falhou em ordenar o vetor.\n", stderr);
+
+    if (!insertion_failed)
+        if ((insertion_failed =
+                 !testa_ordenacao(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING)))
+            fputs("[ERRO (piores_casos_naodecr)]: O algoritmo InsertionSort falhou em ordenar o vetor.\n", stderr);
+
+    if (!selection_failed)
+        if ((selection_failed =
+                 !testa_ordenacao(ubench_fixture->array_selection, ubench_fixture->size, ORDER_NONDECREASING)))
+            fputs("[ERRO (piores_casos_naodecr)]: O algoritmo SelectionSort falhou em ordenar o vetor.\n", stderr);
+
     free(ubench_fixture->array_bubble);
     free(ubench_fixture->array_insertion);
     free(ubench_fixture->array_selection);
@@ -117,6 +133,22 @@ UBENCH_F_SETUP(piores_casos_naocresc) {
 }
 
 UBENCH_F_TEARDOWN(piores_casos_naocresc) {
+    static bool selection_failed = false, insertion_failed = false, bubble_failed = false;
+
+    if (!bubble_failed)
+        if ((bubble_failed = !testa_ordenacao(ubench_fixture->array_bubble, ubench_fixture->size, ORDER_NONINCREASING)))
+            fputs("[ERRO (piores_casos_naocresc)]: O algoritmo BubbleSort falhou em ordenar o vetor.\n", stderr);
+
+    if (!insertion_failed)
+        if ((insertion_failed =
+                 !testa_ordenacao(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONINCREASING)))
+            fputs("[ERRO (piores_casos_naocresc)]: O algoritmo InsertionSort falhou em ordenar o vetor.\n", stderr);
+
+    if (!selection_failed)
+        if ((selection_failed =
+                 !testa_ordenacao(ubench_fixture->array_selection, ubench_fixture->size, ORDER_NONINCREASING)))
+            fputs("[ERRO (piores_casos_naocresc)]: O algoritmo SelectionSort falhou em ordenar o vetor.\n", stderr);
+
     free(ubench_fixture->array_bubble);
     free(ubench_fixture->array_insertion);
     free(ubench_fixture->array_selection);
@@ -176,6 +208,22 @@ UBENCH_F_SETUP(quaseord_naodecr) {
 }
 
 UBENCH_F_TEARDOWN(quaseord_naodecr) {
+    static bool selection_failed = false, insertion_failed = false, bubble_failed = false;
+
+    if (!bubble_failed)
+        if ((bubble_failed = !testa_ordenacao(ubench_fixture->array_bubble, ubench_fixture->size, ORDER_NONDECREASING)))
+            fputs("[ERRO (quaseord_naodecr)]: O algoritmo BubbleSort falhou em ordenar o vetor.\n", stderr);
+
+    if (!insertion_failed)
+        if ((insertion_failed =
+                 !testa_ordenacao(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING)))
+            fputs("[ERRO (quaseord_naodecr)]: O algoritmo InsertionSort falhou em ordenar o vetor.\n", stderr);
+
+    if (!selection_failed)
+        if ((selection_failed =
+                 !testa_ordenacao(ubench_fixture->array_selection, ubench_fixture->size, ORDER_NONDECREASING)))
+            fputs("[ERRO (quaseord_naodecr)]: O algoritmo SelectionSort falhou em ordenar o vetor.\n", stderr);
+
     free(ubench_fixture->array_bubble);
     free(ubench_fixture->array_insertion);
     free(ubench_fixture->array_selection);

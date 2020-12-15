@@ -34,6 +34,7 @@
 #include "ordenacao/gera_instancias.h"
 
 #include <math.h>
+#include <stdbool.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -54,6 +55,8 @@ void benchmark_random_instances() {
     double swaps_avg, swaps_stde, swaps_moe;
     double comps_avg, comps_stde, comps_moe;
 
+    bool selection_failed = false, insertion_failed = false, bubble_failed = false;
+
     puts("\n[[RELATORIO SOBRE INSTANCIAS ALEATORIAS]]");
     puts("Os valores a seguir consideram um intervalo de confianca de 95\%.");
 
@@ -64,6 +67,10 @@ void benchmark_random_instances() {
         timings[current_sample] = ubench_ns();
         telemetry = selection_sort(array, instance_size, ORDER_NONDECREASING);
         timings[current_sample] = ubench_ns() - timings[current_sample];
+
+        if (!selection_failed)
+            if ((selection_failed = !testa_ordenacao(array, instance_size, ORDER_NONDECREASING)))
+                fputs("[ERRO (aleatorias)]: O algoritmo SelectionSort falhou em ordenar o vetor.\n", stderr);
 
         comparisons_array[current_sample] = telemetry.comparisons_count;
         swaps_array[current_sample] = telemetry.swaps_count;
@@ -112,6 +119,10 @@ void benchmark_random_instances() {
         telemetry = insertion_sort(array, instance_size, ORDER_NONDECREASING);
         timings[current_sample] = ubench_ns() - timings[current_sample];
 
+        if (!insertion_failed)
+            if ((insertion_failed = !testa_ordenacao(array, instance_size, ORDER_NONDECREASING)))
+                fputs("[ERRO (aleatorias)]: O algoritmo InsertionSort falhou em ordenar o vetor.\n", stderr);
+
         comparisons_array[current_sample] = telemetry.comparisons_count;
         swaps_array[current_sample] = telemetry.swaps_count;
     }
@@ -158,6 +169,10 @@ void benchmark_random_instances() {
         timings[current_sample] = ubench_ns();
         telemetry = bubble_sort(array, instance_size, ORDER_NONDECREASING);
         timings[current_sample] = ubench_ns() - timings[current_sample];
+
+        if (!bubble_failed)
+            if ((bubble_failed = !testa_ordenacao(array, instance_size, ORDER_NONDECREASING)))
+                fputs("[ERRO (aleatorias)]: O algoritmo BubbleSort falhou em ordenar o vetor.\n", stderr);
 
         comparisons_array[current_sample] = telemetry.comparisons_count;
         swaps_array[current_sample] = telemetry.swaps_count;
