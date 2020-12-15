@@ -38,7 +38,7 @@
 #include <ubench.h>
 
 size_t instance_size = 1000;
-size_t samples = 30;
+size_t samples = 121;
 
 //----- piores casos NÃO-DECRESCENTE
 
@@ -202,65 +202,6 @@ UBENCH_F(quaseord_naodecr, insertion_sort) {
 }
 
 UBENCH_F(quaseord_naodecr, bubble_sort) {
-    static unsigned int execution = 0;
-    sorting_telemetry telemetry =
-        bubble_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
-    if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
-        ++execution;
-    }
-}
-
-//----- aleatorio nãodecrescente
-
-struct aleatorio_naodecr {
-    int *array_selection;
-    int *array_insertion;
-    int *array_bubble;
-    size_t size;
-    size_t samples_count;
-};
-
-UBENCH_F_SETUP(aleatorio_naodecr) {
-    ubench_fixture->size = instance_size;
-    ubench_fixture->samples_count = samples;
-
-    ubench_fixture->array_selection = malloc(sizeof(int) * instance_size);
-    ubench_fixture->array_insertion = malloc(sizeof(int) * instance_size);
-    ubench_fixture->array_bubble = malloc(sizeof(int) * instance_size);
-
-    instancia_aleatoria(ubench_fixture->array_selection, instance_size);
-    instancia_aleatoria(ubench_fixture->array_insertion, instance_size);
-    instancia_aleatoria(ubench_fixture->array_bubble, instance_size);
-}
-
-UBENCH_F_TEARDOWN(aleatorio_naodecr) {
-    free(ubench_fixture->array_bubble);
-    free(ubench_fixture->array_insertion);
-    free(ubench_fixture->array_selection);
-}
-
-UBENCH_F(aleatorio_naodecr, selection_sort) {
-    static unsigned int execution = 0;
-    sorting_telemetry telemetry =
-        selection_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
-    if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
-        ++execution;
-    }
-}
-
-UBENCH_F(aleatorio_naodecr, insertion_sort) {
-    static unsigned int execution = 0;
-    sorting_telemetry telemetry =
-        insertion_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
-    if (execution == 0) {
-        printf("comparacoes = %zu, trocas = %zu\n", telemetry.comparisons_count, telemetry.swaps_count);
-        ++execution;
-    }
-}
-
-UBENCH_F(aleatorio_naodecr, bubble_sort) {
     static unsigned int execution = 0;
     sorting_telemetry telemetry =
         bubble_sort(ubench_fixture->array_insertion, ubench_fixture->size, ORDER_NONDECREASING);
