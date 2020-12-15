@@ -48,3 +48,9 @@ sorting_telemetry bubble_sort(int array[], size_t size, enum ordering order) {
 
     return (sorting_telemetry){0, 0, 0};
 }
+
+bool testa_ordenacao(int array[], size_t size, enum ordering order) {
+    // TODO Implementação
+
+    return false;
+}

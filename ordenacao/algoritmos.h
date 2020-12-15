@@ -41,6 +41,7 @@
 #ifndef QXD_QXCODE_ALGORITMOS_H
 #define QXD_QXCODE_ALGORITMOS_H
 
+#include <stdbool.h>
 #include <stddef.h>
 
 /**
@@ -92,5 +93,17 @@ sorting_telemetry insertion_sort(int array[], size_t size, enum ordering order);
  ** @return         informações sobre as operações realizadas durante a ordenação.
  **/
 sorting_telemetry bubble_sort(int array[], size_t size, enum ordering order);
+
+/**
+ ** @brief Verifica se os primeiros @p size elementos do vetor @p array estão
+ ** ordenados segundo a ordem @p order especificada.
+ **
+ ** @param array    vetor a verificar.
+ ** @param size     quantidade de elementos a considerara em @p array.
+ ** @param order    ordem a ser verificada.
+ ** @return true    caso a ordem esteja estabelecida.
+ ** @return false   caso exista algum elemento fora de ordem.
+ **/
+bool testa_ordenacao(int array[], size_t size, enum ordering order);
 
 #endif
