@@ -97,7 +97,7 @@ void benchmark_random_instances() {
     swaps_moe = 1.98 * swaps_stde / sqrt(samples);
     comps_moe = 1.98 * comps_stde / sqrt(samples);
 
-    puts("\n[ SelectionSort (media [margem]) ]:");
+    puts("\n[ SelectionSort: media [margem] ]:");
     printf("  - %-25s %.3lf %-3s [+- %.3lf]\n", "Tempo de execucao:", "us", time_avg, time_moe);
     printf("  - %-25s %.3lf     [+- %.3lf]\n", "Trocas:", swaps_avg, swaps_moe);
     printf("  - %-25s %.3lf     [+- %.3lf]\n", "Comparacoes:", comps_avg, comps_moe);
@@ -144,7 +144,7 @@ void benchmark_random_instances() {
     swaps_moe = 1.98 * swaps_stde / sqrt(samples);
     comps_moe = 1.98 * comps_stde / sqrt(samples);
 
-    puts("\n[ InsertionSort (media [margem]) ]:");
+    puts("\n[ InsertionSort: media [margem] ]:");
     printf("  - %-25s %.3lf %-3s [+- %.3lf]\n", "Tempo de execucao:", "us", time_avg, time_moe);
     printf("  - %-25s %.3lf     [+- %.3lf]\n", "Trocas:", swaps_avg, swaps_moe);
     printf("  - %-25s %.3lf     [+- %.3lf]\n", "Comparacoes:", comps_avg, comps_moe);
@@ -191,7 +191,7 @@ void benchmark_random_instances() {
     swaps_moe = 1.98 * swaps_stde / sqrt(samples);
     comps_moe = 1.98 * comps_stde / sqrt(samples);
 
-    puts("\n[ BubbleSort (media [margem]) ]:");
+    puts("\n[ BubbleSort: media [margem] ]:");
     printf("  - %-25s %.3lf %-3s [+- %.3lf]\n", "Tempo de execucao:", "us", time_avg, time_moe);
     printf("  - %-25s %.3lf     [+- %.3lf]\n", "Trocas:", swaps_avg, swaps_moe);
     printf("  - %-25s %.3lf     [+- %.3lf]\n", "Comparacoes:", comps_avg, comps_moe);
