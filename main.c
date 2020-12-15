@@ -44,6 +44,8 @@ UBENCH_STATE();
 extern size_t instance_size;
 extern size_t samples;
 
+void benchmark_random_instances();
+
 int main(int argc, char *argv[]) {
     int exitcode = EXIT_SUCCESS;
     
@@ -52,14 +54,13 @@ int main(int argc, char *argv[]) {
 
     // Estruturas para parametros
     struct arg_lit *help_opt;
-    struct arg_int *size_opt, *samples_opt, *seed_opt;
+    struct arg_int *size_opt, *seed_opt;
     struct arg_end *end_opt;
 
     // Sequencia de parametros
     void *argtable[] = {
         help_opt = arg_litn("?h", "help", 0, 1, "mostrar este texto de ajuda e encerrar"),
         size_opt = arg_intn("n", "size", "<n>", 0, 1, "tamanho de cada instancia a gerar"),
-        samples_opt = arg_intn("r", "samples", "<n>", 0, 1, "quantidade de instancias aleatorias a gerar"),
         seed_opt = arg_intn("s", "seed", "<n>", 0, 1, "semente a ser usada para gerar numeros aleatorios"),
         end_opt = arg_end(5),
     };
@@ -99,18 +100,6 @@ int main(int argc, char *argv[]) {
                 }
             }
 
-            if (samples_opt->count > 0) {
-                if(samples_opt->ival[0] > 0) {
-                    samples = (size_t) samples_opt->ival[0];
-                } else {
-                    fprintf(stderr,
-                            "[ERRO]: Quantidade de instancias aleatorias deve ser positiva. Valor fornecido foi %d.\n",
-                            samples_opt->ival[0]);
-                    exitcode = EXIT_FAILURE;
-                    goto exit_point;
-                }
-            }
-
             if (seed_opt->count > 0) {
                 if (seed_opt->ival[0] >= 0) {
                     seed = (unsigned int) seed_opt->ival[0];
@@ -127,7 +116,9 @@ int main(int argc, char *argv[]) {
 
             exitcode = ubench_main(argc, (const char * const*)argv);
 
-            printf("\n[[----EXECUTION INFO----]]\n  - %-25s = %zu\n  - %-25s = %zu"
+            benchmark_random_instances();
+
+            printf("\n[[----INFORMACOES DE EXECUCAO----]]\n  - %-25s = %zu\n  - %-25s = %zu"
                    "\n  - %-25s = %u\n\n",
                    "Tamanho das instancias", instance_size, "Quantidade de amostras", samples, "Semente usada", seed);
         }

@@ -9,6 +9,7 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/argtable-3.1.5-amalgamation/)
 add_executable(analise-empirica
     main.c
     benchmarks.c
+    benchmark_random.c
     ordenacao/algoritmos.c
     ordenacao/gera_instancias.c
     libs/argtable-3.1.5-amalgamation/argtable3.c
