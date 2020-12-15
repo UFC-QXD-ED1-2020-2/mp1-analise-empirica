@@ -29,7 +29,7 @@
  **
  **/
 
-#include "algoritmos.h"
+#include "../ordenacao/algoritmos.h"
 
 sorting_telemetry selection_sort(int array[], size_t size, enum ordering order) {
     // TODO Implementação

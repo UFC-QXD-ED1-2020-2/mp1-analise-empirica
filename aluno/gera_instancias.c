@@ -32,7 +32,7 @@
  **
  **/
 
-#include "gera_instancias.h"
+#include "../ordenacao/gera_instancias.h"
 
 #include <stdlib.h>
 
