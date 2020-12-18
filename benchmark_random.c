@@ -85,7 +85,8 @@ void benchmark_random_instances() {
 
         if (!selection_failed)
             if ((selection_failed = !testa_ordenacao(array_clone, instance_size, ORDER_NONDECREASING)))
-                fputs("[ERRO (aleatorias)]: O algoritmo SelectionSort falhou em ordenar o vetor.\n", stderr);
+                fprintf(stderr, "[ERRO (aleatorias)]: O algoritmo %s falhou em ordenar o vetor.\n",
+                        sorting_algos_names[SELECTION]);
 
         comparisons_array[SELECTION][current_sample] = telemetry.comparisons_count;
         swaps_array[SELECTION][current_sample] = telemetry.swaps_count;
@@ -99,7 +100,8 @@ void benchmark_random_instances() {
 
         if (!insertion_failed)
             if ((insertion_failed = !testa_ordenacao(array_clone, instance_size, ORDER_NONDECREASING)))
-                fputs("[ERRO (aleatorias)]: O algoritmo SelectionSort falhou em ordenar o vetor.\n", stderr);
+                fprintf(stderr, "[ERRO (aleatorias)]: O algoritmo %s falhou em ordenar o vetor.\n",
+                        sorting_algos_names[INSERTION]);
 
         comparisons_array[INSERTION][current_sample] = telemetry.comparisons_count;
         swaps_array[INSERTION][current_sample] = telemetry.swaps_count;
@@ -113,7 +115,8 @@ void benchmark_random_instances() {
 
         if (!bubble_failed)
             if ((bubble_failed = !testa_ordenacao(array_clone, instance_size, ORDER_NONDECREASING)))
-                fputs("[ERRO (aleatorias)]: O algoritmo SelectionSort falhou em ordenar o vetor.\n", stderr);
+                fprintf(stderr, "[ERRO (aleatorias)]: O algoritmo %s falhou em ordenar o vetor.\n",
+                        sorting_algos_names[BUBBLE]);
 
         comparisons_array[BUBBLE][current_sample] = telemetry.comparisons_count;
         swaps_array[BUBBLE][current_sample] = telemetry.swaps_count;
