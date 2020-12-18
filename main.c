@@ -114,6 +114,7 @@ int main(int argc, char *argv[]) {
             // Inicializando geração de números aleatórios.
             srand(seed);
 
+            puts("=== Os valores a seguir consideram um intervalo de confianca de 99\%. ===");
             exitcode = ubench_main(argc, (const char * const*)argv);
 
             benchmark_random_instances();

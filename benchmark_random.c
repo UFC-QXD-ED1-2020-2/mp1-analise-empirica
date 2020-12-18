@@ -58,7 +58,7 @@ void benchmark_random_instances() {
     bool selection_failed = false, insertion_failed = false, bubble_failed = false;
 
     puts("\n[[RELATORIO SOBRE INSTANCIAS ALEATORIAS]]");
-    puts("Os valores a seguir consideram um intervalo de confianca de 95\%.");
+    puts("=== Os valores a seguir consideram um intervalo de confianca de 95\%. ===");
 
     // ==> BEGIN: SelectionSort
     for (current_sample = 0; current_sample < samples; ++current_sample) {
